@@ -12,6 +12,11 @@ Example
 
 ./script/generate scaffold Video title:string video_url:string
 
+#video.rb
+class Video < ActiveRecord::Base
+  acts_as_video_fu
+end
+
 
 Video.create!(:title => "Some Title", :video_url => "http://www.youtube.com/watch?v=gEILFf2XSrM")
 
