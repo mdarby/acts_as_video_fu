@@ -24,11 +24,18 @@ module Mdarby
       module InstanceMethods
           
         def kind?
-          return YouTube if YOUTUBE_RE.match(video_url)
-          return Vimeo if VIMEO_RE.match(video_url)
+          return YouTube if youtube?
+          return Vimeo if vimeo?
           return false
         end
         
+        def youtube?
+          YOUTUBE_RE =~ video_url
+        end
+        
+        def vimeo?
+          VIMEO_RE =~ video_url
+        end
         
         private
         
