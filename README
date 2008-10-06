@@ -1,7 +1,8 @@
 ActsAsVideoFu
 =============
 
-Rails plugin that easily allows you to show video streams on your site. Currently, YouTube and Vimeo streams are supported.
+Rails plugin that easily allows you to show video streams on your site.
+Currently, YouTube and Vimeo streams are supported.
 #video_url is expected to be in these formats:
 
 YouTube: http://www.youtube.com/watch?v=gEILFf2XSrM 

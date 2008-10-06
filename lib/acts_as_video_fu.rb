@@ -2,8 +2,8 @@ module Mdarby
   module Acts #:nodoc:
     module Acts_as_video_fu #:nodoc:
 
-      VIMEO_RE   = /^http:\/\/www.vimeo.com\/[0-9]*$/
-      YOUTUBE_RE = /^http:\/\/www.youtube.com\/watch\?v=[a-zA-z0-9]*$/
+      VIMEO_RE   = /^http:\/\/(www\.vimeo|vimeo)\.com\/[0-9]*$/
+      YOUTUBE_RE = /^http:\/\/(www\.youtube|youtube)\.com\/watch\?v=[a-zA-z0-9]*$/
 
       def self.included(base)
         base.extend ClassMethods
@@ -36,6 +36,7 @@ module Mdarby
           raise "#{self.class.to_s}#video_url doesn't exist!" unless respond_to?(:video_url)
           
           unless video_url.blank?
+            errors.add_to_base("Video URL has whitespace") if video_url.strip!
             errors.add_to_base("Video URL is not recognized") unless kind?
           end
         end
