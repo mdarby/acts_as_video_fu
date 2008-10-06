@@ -1,3 +1,4 @@
+require 'httparty'
 require 'acts_as_video_fu'
 require 'acts_as_video_fu_helper'
 

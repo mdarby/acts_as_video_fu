@@ -2,7 +2,7 @@ module Mdarby
   module Acts #:nodoc:
     module Acts_as_video_fu #:nodoc:
 
-      VIMEO_RE   = /^http:\/\/vimeo.com\/[0-9]*$/
+      VIMEO_RE   = /^http:\/\/www.vimeo.com\/[0-9]*$/
       YOUTUBE_RE = /^http:\/\/www.youtube.com\/watch\?v=[a-zA-z0-9]*$/
 
       def self.included(base)
@@ -24,10 +24,11 @@ module Mdarby
       module InstanceMethods
           
         def kind?
-          return "YouTube" if YOUTUBE_RE.match(video_url)
-          return "Vimeo" if VIMEO_RE.match(video_url)
+          return YouTube if YOUTUBE_RE.match(video_url)
+          return Vimeo if VIMEO_RE.match(video_url)
           return false
         end
+        
         
         private
         
