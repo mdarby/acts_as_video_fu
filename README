@@ -24,5 +24,8 @@ Video.create!(:title => "Some Title", :video_url => "http://www.youtube.com/watc
 #show.html.erb
 <%= display_video(@video) %>
 
+# You can override the default video size by passing height & width
+<%= display_video(@video, :height => 200, :width => 300) %>
 
-Copyright (c) 2008 [Matt Darby], released under the MIT license
+
+Copyright (c) 2008 Matt Darby, released under the MIT license

@@ -2,18 +2,18 @@ module Mdarby
   module Acts #:nodoc:
     module Acts_as_video_fu_helper
   
-      def display_video(obj, height = nil, width = nil)
+      def display_video(obj, options = {})
         if obj.kind? == "YouTube"
-          youtube(obj, height, width)
+          youtube(obj, options)
         elsif obj.kind? == "Vimeo"
-          vimeo(obj, height, width)
+          vimeo(obj, options)
         end
       end
       
-      def youtube(obj, height, width)
-        height ||= 344
-        width ||= 425
-        url = obj.video_url.gsub("watch?v=", "v/") << "&hl=en&fs=1"
+      def youtube(obj, options)
+        height = options[:height] || 344
+        width  = options[:width] || 425
+        url    = obj.video_url.gsub("watch?v=", "v/") << "&hl=en&fs=1"
         
         <<-END
           <object width="#{width}" height="#{height}">
@@ -25,9 +25,9 @@ module Mdarby
         END
       end
       
-      def vimeo(obj, height, width)
-        height ||= 225
-        width ||= 400
+      def vimeo(obj, options)
+        height  = options[:height] || 225
+        width   = options[:width] || 400
         clip_id = obj.video_url.split('/').last
         
         <<-END
