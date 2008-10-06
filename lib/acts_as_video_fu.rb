@@ -32,10 +32,10 @@ module Mdarby
         private
         
         def validate
-          raise "#{self.class.to_s}#video_url doesn't exist!" unless self.respond_to?(:video_url)
+          raise "#{self.class.to_s}#video_url doesn't exist!" unless respond_to?(:video_url)
           
           unless video_url.blank?
-            errors.add_to_base("Video URL is not recognized") unless self.kind?
+            errors.add_to_base("Video URL is not recognized") unless kind?
           end
         end
         
