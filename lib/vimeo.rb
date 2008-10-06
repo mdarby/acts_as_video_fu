@@ -13,7 +13,7 @@ class Vimeo
     @response["thumbnail_url"]
   end
   
-  def embed_html()
+  def embed_html
     @response["html"]
   end
   

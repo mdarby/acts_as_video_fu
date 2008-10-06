@@ -22,7 +22,12 @@ Video.create!(:title => "Some Title", :video_url => "http://www.youtube.com/watc
 
 
 #show.html.erb
+
+# Show the video
 <%= display_video(@video) %>
+
+# Show the video's thumbnail image
+<%= image_tag thumbnail_url(video) %>
 
 
 Copyright (c) 2008 Matt Darby, released under the MIT license
