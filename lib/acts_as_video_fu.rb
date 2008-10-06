@@ -23,7 +23,7 @@ module Mdarby
 
       module InstanceMethods
           
-        def kind?
+        def type
           return YouTube if youtube?
           return Vimeo if vimeo?
           return false
@@ -44,7 +44,7 @@ module Mdarby
           
           unless video_url.blank?
             errors.add_to_base("Video URL has whitespace") if video_url.strip!
-            errors.add_to_base("Video URL is not recognized") unless kind?
+            errors.add_to_base("Video URL is not recognized") unless type
           end
         end
         

@@ -6,7 +6,7 @@ class YouTube
   
   def initialize(obj)
     @clip_id   = obj.video_url.split('?v=').last
-    @embed_url = "http://www.youtube.com/v/#{@clip_id}" << "&hl=en&fs=1"
+    @embed_url = "http://www.youtube.com/v/#{@clip_id}&hl=en&fs=1"
     @response  = self.class.get("/feeds/api/videos/#{@clip_id}")
   end
   
@@ -17,9 +17,9 @@ class YouTube
   def embed_html
     <<-END
       <object width="425" height="344">
-        <param name="movie" value="#{@embed_url}"></param>
-        <param name="allowFullScreen" value="true"></param>
-        <embed src="#{@embed_url}" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed>
+        <param name="movie" value="#{@embed_url}" />
+        <param name="allowFullScreen" value="true" />
+        <embed src="#{@embed_url}" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344" />
       </object>
     END
   end

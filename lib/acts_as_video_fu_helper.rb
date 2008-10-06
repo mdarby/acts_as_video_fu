@@ -3,13 +3,20 @@ module Mdarby
     module Acts_as_video_fu_helper
   
       def display_video(obj)
-        obj.kind?.new(obj).embed_html
+        klass(obj).embed_html
       end
       
       def thumbnail_url(obj)
-        obj.kind?.new(obj).thumbnail_url
+        klass(obj).thumbnail_url
       end
       
+      
+      private
+      
+        def klass(obj)
+          obj.type.new(obj)
+        end
+        
     end
   end
 end
