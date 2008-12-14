@@ -1,0 +1,29 @@
+h2. ActsAsVideoFu
+
+A Rails plugin that easily allows you to show video streams on your site.
+Currently, YouTube and Vimeo streams are supported.
+
+Note that #video_url is expected to be in these formats:
+
+YouTube: http://www.youtube.com/watch?v=gEILFf2XSrM 
+Vimeo: http://www.vimeo.com/726135
+
+h3. Example
+
+# Generate a resource that includes the title:string and video_url:string attributes
+<pre>./script/generate scaffold Video title:string video_url:string</pre>
+
+# Add 'acts_as_video_fu' to your model
+<pre>
+class Video < ActiveRecord::Base
+  acts_as_video_fu
+end
+</pre>
+
+# Show the video's thumbnail in any view you might like
+<pre><%= image_tag thumbnail_url(video) %></pre>
+
+# Add the 'display_video' helper to show the full-sized video in any view you might like
+<pre><%= display_video(@video) %></pre>
+
+Copyright (c) 2008 Matt Darby, released under the MIT license
