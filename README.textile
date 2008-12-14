@@ -5,8 +5,10 @@ Currently, YouTube and Vimeo streams are supported.
 
 Note that #video_url is expected to be in these formats:
 
+<pre>
 YouTube: http://www.youtube.com/watch?v=gEILFf2XSrM 
 Vimeo: http://www.vimeo.com/726135
+</pre>
 
 h3. Example
 
