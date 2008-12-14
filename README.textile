@@ -3,12 +3,22 @@ h2. ActsAsVideoFu
 A Rails plugin that easily allows you to show video streams on your site.
 Currently, YouTube and Vimeo streams are supported.
 
+<pre>
 Note that #video_url is expected to be in these formats:
 
-<pre>
 YouTube: http://www.youtube.com/watch?v=gEILFf2XSrM 
 Vimeo: http://www.vimeo.com/726135
 </pre>
+
+
+h3. Installation
+
+# Install the gem
+<pre>sudo gem install mdarby-acts_as_video_fu</pre>
+
+# Require the gem in your config/environment.rb file
+<pre>config.gem 'mdarby-acts_as_video_fu', :lib => 'acts_as_video_fu'</pre>
+
 
 h3. Example
 
