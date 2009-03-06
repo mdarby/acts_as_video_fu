@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = "acts_as_video_fu"
-  s.version  = "1.1"
-  s.date     = "2008-12-14"
+  s.version  = "1.2"
+  s.date     = "2009-03-06"
   s.summary  = "Rails plugin that easily allows you to show video streams on your site."
   s.email    = "matt@matt-darby.com"
   s.homepage = "http://github.com/mdarby/acts_as_video_fu/tree/master"
@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
                 "tasks/acts_as_video_fu_tasks.rake",
                 "test/acts_as_video_fu_test.rb",
                 "uninstall.rb"]
-  s.add_dependency("httparty", [">= 0.2.2"])
+  s.add_dependency("httparty", [">= 0.3.1"])
 end
