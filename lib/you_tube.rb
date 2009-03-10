@@ -11,7 +11,7 @@ class YouTube
   end
   
   def thumbnail_url
-    @response["entry"]["group"]["thumbnail"][0]["url"]
+    @response["entry"]["media:group"]["media:thumbnail"][0]["url"]
   end
   
   def embed_html
